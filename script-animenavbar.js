@@ -63,6 +63,14 @@ jQuery(document).ready(function($){
 const btnSearch = document.getElementById("btnSearch");
 const btnResetSearch = document.getElementById("btnClear");
 
+var input = document.getElementById("travelInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("btnSearch").click();
+  }
+});
+
 function searchTravel() {
     const input = document.getElementById('travelInput').value.toLowerCase();
     const resultDiv = document.getElementById('result');
